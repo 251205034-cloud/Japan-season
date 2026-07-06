@@ -8,7 +8,8 @@
     box-sizing: border-box;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -112,7 +113,8 @@ img {
     }
 
     .main {
-        padding-top: 50px;;
+        padding-top: 50px;
+        ;
     }
 
     .footer-logo {
