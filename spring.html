@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
-    <title>名城大学情報工学部のコンセプト</title>
-    <meta name="description" content="コンセプト">
-    <meta name="viewport" content="width=device-width">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/season.css" rel="stylesheet">
-    <link href="css/site-shell.css" rel="stylesheet">
+    <meta name="description" content="国営ひたち海浜公園、弘前公園、立山黒部アルペンルート。日本の春に訪れたい3つの風景を紹介します。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#b75f80">
+    <title>春のおすすめ旅 | 日本の四季を味わう</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/site-shell.css" rel="stylesheet">
+    <link href="css/season-page.css" rel="stylesheet">
     <script src="js/main.js?v=20260720" defer></script>
 </head>
 
-<body class="season-page spring-page">
+<body class="season-detail-page theme-spring">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
     <header class="site-header">
         <div class="site-header-inner">
             <a class="site-brand" href="index.html" aria-label="日本の四季 トップページ">
@@ -41,54 +44,142 @@
             </div>
         </div>
     </header>
-    <main class="main">
-        <div class="title">
-            <h1>Concept</h1>
-            <p>情報工学部について</p>
-        </div>
-        <div class="feature">
-            <div class="feature-text">
-                <h2>国営ひたち海浜公園のネモフィラ畑</h2>
-                <p>美しいネモフィラ畑を一望できます．</p>
-                <img src="images/spring/nemofira.jpg" alt="ネモフィラ畑">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3211.137506432263!2d140.59391187583014!3d36.40586828982885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60218b1d845e4441%3A0x767e1dea03e6f0e1!2z5Zu95Za244Gy44Gf44Gh5rW35rWc5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1783321079308!5m2!1sja!2sjp"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
+
+    <main id="main-content">
+        <section class="season-hero" aria-labelledby="season-title">
+            <img class="season-hero-image" src="images/spring/hirosaki.webp" alt="夜空の下でライトアップされた弘前公園の桜と水面の映り込み">
+            <div class="season-hero-content">
+                <p class="hero-kicker"><span>01</span> SPRING JOURNEY</p>
+                <h1 id="season-title">花と雪の旅、<br><strong>日本の春。</strong></h1>
+                <p class="hero-lead">丘を染める花、夜空を彩る桜、<br>雪が残る山々の澄んだ空気。<br>季節の始まりを感じる3つの風景へ。</p>
+                <a class="hero-button" href="#destinations">おすすめの場所を見る<span aria-hidden="true">↓</span></a>
             </div>
-        </div>
-        <div class="feature reverse">
-            <div class="feature-text">
-                <h2>弘前公園「弘前さくら祭り」</h2>
-                <p>美しい桜を一望できます．</p>
-                <img src="images\spring\hirosaki.webp" alt="弘前公園">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6799.880360098732!2d140.45853360896504!3d40.60776999661218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9b01c41b4b1d49%3A0x1b2b7530b0ff15fc!2z5byY5YmN5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1783321262806!5m2!1sja!2sjp"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
+            <p class="hero-location">HIROSAKI PARK <span>AOMORI</span></p>
+        </section>
+
+        <section class="season-intro" id="destinations" aria-labelledby="destinations-title">
+            <div class="season-intro-number" aria-hidden="true">03</div>
+            <div class="season-intro-heading">
+                <p class="section-kicker">PLACES TO VISIT</p>
+                <h2 id="destinations-title">春に訪れたい、<br>3つの風景</h2>
             </div>
-        </div>
-        <div class="feature">
-            <div class="feature-text">
-                <h2>立川黒部アルペンルート「雪の大谷」</h2>
-                <p>美しい雪の景色を一望できます．</p>
-                <img src="images\spring\kurobe.png" alt="黒部">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.624831908617!2d137.44607067583738!3d36.58725767967427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff7eff070ecd59b%3A0x151e5b7c7338db2b!2z56uL5bGx6buS6YOo44Ki44Or44Oa44Oz44Or44O844OI!5e0!3m2!1sja!2sjp!4v1783321326607!5m2!1sja!2sjp"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <p class="season-intro-copy">北へ、山へ、春はゆっくりと日本をめぐります。花の青、桜の淡い色、残雪の白。移ろう季節を感じる春景色を選んでください。</p>
+        </section>
+
+        <div class="destination-list">
+            <article class="destination" id="hitachi-seaside-park">
+                <div class="destination-media">
+                    <img src="images/spring/nemofira.jpg" alt="青空の下で丘一面に咲く青いネモフィラ" loading="lazy">
+                    <p class="image-caption"><span>01</span> HITACHI SEASIDE PARK, IBARAKI</p>
                 </div>
-            </div>
+                <div class="destination-content">
+                    <p class="destination-area">茨城県・ひたちなか市</p>
+                    <h2>空へ溶け込む<br>ネモフィラの丘</h2>
+                    <p class="destination-description">丘一面を埋め尽くすネモフィラが、空とつながるような青い風景をつくります。春の風を感じながら歩けば、花の中に包まれるような時間を楽しめます。</p>
+                    <ul class="destination-points" aria-label="国営ひたち海浜公園の見どころ">
+                        <li>一面のネモフィラ</li>
+                        <li>空と花の青</li>
+                        <li>開放的な丘</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>国営ひたち海浜公園</h3>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9B%BD%E5%96%B6%E3%81%B2%E3%81%9F%E3%81%A1%E6%B5%B7%E6%B5%9C%E5%85%AC%E5%9C%92" target="_blank" rel="noopener noreferrer">大きな地図で見る<span aria-hidden="true">↗</span></a>
+                        </div>
+                        <iframe src="https://www.google.com/maps?q=%E5%9B%BD%E5%96%B6%E3%81%B2%E3%81%9F%E3%81%A1%E6%B5%B7%E6%B5%9C%E5%85%AC%E5%9C%92&amp;output=embed" title="国営ひたち海浜公園の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <article class="destination destination--reverse" id="hirosaki-park">
+                <div class="destination-media">
+                    <img src="images/spring/hirosaki.webp" alt="ライトアップされた弘前公園の桜が水面に映る夜景" loading="lazy">
+                    <p class="image-caption"><span>02</span> HIROSAKI PARK, AOMORI</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">青森県・弘前市</p>
+                    <h2>夜の水面を彩る<br>弘前の桜</h2>
+                    <p class="destination-description">園内を包む桜と、光を映すお濠が幻想的な春の夜を描きます。昼のやわらかな花景色とはひと味違う、弘前公園ならではの華やかさに出会えます。</p>
+                    <ul class="destination-points" aria-label="弘前公園の見どころ">
+                        <li>お濠を囲む桜</li>
+                        <li>幻想的な夜桜</li>
+                        <li>水面の映り込み</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>弘前公園</h3>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BC%98%E5%89%8D%E5%85%AC%E5%9C%92" target="_blank" rel="noopener noreferrer">大きな地図で見る<span aria-hidden="true">↗</span></a>
+                        </div>
+                        <iframe src="https://www.google.com/maps?q=%E5%BC%98%E5%89%8D%E5%85%AC%E5%9C%92&amp;output=embed" title="弘前公園の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <article class="destination" id="tateyama-kurobe">
+                <div class="destination-media">
+                    <img src="images/spring/kurobe.png" alt="残雪をまとった山々と青い池に映る立山の風景" loading="lazy">
+                    <p class="image-caption"><span>03</span> TATEYAMA KUROBE, TOYAMA</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">富山県・立山町</p>
+                    <h2>残雪が描く<br>山岳の春</h2>
+                    <p class="destination-description">青空の下に連なる山々と、春にも残る白い雪。立山黒部アルペンルートでは、花の季節とは異なる雄大な雪景色から山の春の始まりを感じられます。</p>
+                    <ul class="destination-points" aria-label="立山黒部アルペンルートの見どころ">
+                        <li>迫力ある残雪</li>
+                        <li>雄大な山並み</li>
+                        <li>澄んだ山の空気</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>立山黒部アルペンルート</h3>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%AB%8B%E5%B1%B1%E9%BB%92%E9%83%A8%E3%82%A2%E3%83%AB%E3%83%9A%E3%83%B3%E3%83%AB%E3%83%BC%E3%83%88" target="_blank" rel="noopener noreferrer">大きな地図で見る<span aria-hidden="true">↗</span></a>
+                        </div>
+                        <iframe src="https://www.google.com/maps?q=%E7%AB%8B%E5%B1%B1%E9%BB%92%E9%83%A8%E3%82%A2%E3%83%AB%E3%83%9A%E3%83%B3%E3%83%AB%E3%83%BC%E3%83%88&amp;output=embed" title="立山黒部アルペンルートの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </article>
         </div>
+
+        <section class="travel-note" aria-labelledby="travel-note-title">
+            <div class="travel-note-heading">
+                <p class="section-kicker">TRAVEL NOTE</p>
+                <h2 id="travel-note-title">春旅を心地よく<br>楽しむために</h2>
+            </div>
+            <div class="travel-note-grid">
+                <article>
+                    <span>01</span>
+                    <h3>見頃を確かめて</h3>
+                    <p>花の開花や山の雪解けは年によって変わります。出発前に現地の最新情報を確認しましょう。</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>寒暖差への備えを</h3>
+                    <p>朝晩や山間部は冷え込むことがあります。重ね着できる上着を用意すると安心です。</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>風景を大切に</h3>
+                    <p>花畑や園路では地域のルールを守り、美しい春景色を次の人へつなげましょう。</p>
+                </article>
+            </div>
+        </section>
+
+        <nav class="season-pager" aria-label="季節ページの移動">
+            <a href="winter.html"><span>PREVIOUS</span>冬のページへ</a>
+            <a href="index.html" class="season-pager-home"><span>HOME</span>四季のトップへ</a>
+            <a href="summer.html"><span>NEXT</span>夏のページへ</a>
+        </nav>
     </main>
+
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>

@@ -76,12 +76,12 @@
 
 /* 【固定】秋ページの配色。 */
 .season-detail-page.theme-autumn {
-    --season-ink: #3f3025;
+    --season-ink: #523b2b;
     --season-deep: #713f2b;
     --season-accent: #b45a2b;
     --season-frame: #c88b43;
     --season-highlight: #ffe3ad;
-    --season-paper: #f7f0e6;
+    --season-paper: #fff6e9;
     --season-paper-rgb: 247, 240, 230;
     --season-muted: #796b60;
     --season-line: rgba(63, 48, 37, 0.18);
