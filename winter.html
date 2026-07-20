@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
-    <title>名城大学情報工学部のコンセプト</title>
-    <meta name="description" content="コンセプト">
-    <meta name="viewport" content="width=device-width">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/season.css" rel="stylesheet">
-    <link href="css/site-shell.css" rel="stylesheet">
+
+    <!-- 【変更】紹介する3か所が分かる、ページ固有の説明文に書き換える。 -->
+    <meta name="description" content="白川郷、樹氷、あしかがフラワーパーク。日本の冬に訪れたい3つの風景を紹介します。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 【変更】季節のテーマ色に合わせる。色の候補はREADME.mdを参照する。 -->
+    <meta name="theme-color" content="#4b7e9d">
+
+    <!-- 【変更】「夏」を作成する季節名へ置き換える。 -->
+    <title>冬のおすすめ旅 | 日本の四季を味わう</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/site-shell.css" rel="stylesheet">
+    <!-- 【固定】季節ごとの配色はbodyのテーマクラスで切り替わるため、このCSSパスとCSS本体は変更しない。 -->
+    <link href="templates/season-page/season-page.css" rel="stylesheet">
     <script src="js/main.js?v=20260720" defer></script>
 </head>
 
-<body class="season-page winter-page">
+<!--
+    【変更】theme-summerを作成する季節に合わせて1つだけ指定する。
+    春: theme-spring / 夏: theme-summer / 秋: theme-autumn / 冬: theme-winter
+-->
+<body class="season-detail-page theme-winter">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <!-- 【固定】全ページ共通ヘッダー。現在の季節だけaria-current="page"を付ける。 -->
     <header class="site-header">
         <div class="site-header-inner">
             <a class="site-brand" href="index.html" aria-label="日本の四季 トップページ">
@@ -33,56 +48,162 @@
                 <nav class="site-navigation-menu" aria-label="季節別ページ">
                     <ul>
                         <li><a href="spring.html"><span>01</span>春</a></li>
-                        <li><a href="summer.html"><span>02</span>夏</a></li>
+                        <li><a href="summer.html" aria-current="page"><span>02</span>夏</a></li>
                         <li><a href="autumn.html"><span>03</span>秋</a></li>
-                        <li><a href="winter.html" aria-current="page"><span>04</span>冬</a></li>
+                        <li><a href="winter.html"><span>04</span>冬</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-    <main class="main">
-        <div class="title">
-            <h1>Concept</h1>
-            <p>情報工学部について</p>
-        </div>
-        <div class="feature">
-            <div class="feature-text">
-                <h2>白川郷の合掌造り集落</h2>
-                <p>世界遺産に登録されている、昔ながらの合掌造り集落。しんしんと降り積もる真っ白な雪の中に、伝統的な茅葺き屋根の民家が佇む日本の原風景です。夜のライトアップでは、雪の中に温かな光が灯り、まるでおとぎ話のような世界が広がります。</p>
-                <img src="images\winter\白川郷.jpg" alt="白川郷">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3217.2463899167674!2d136.90362257581373!3d36.25779667240668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff871b0b6bf25e7%3A0xccc551bb9d5805f8!2z55m95bed6YO3!5e0!3m2!1sja!2sjp!4v1784465038560!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                <div>
+
+    <main id="main-content">
+        <!--
+            【変更】ヒーロー画像、代替テキスト、番号、英語季節名、見出し、説明文、撮影地を変更する。
+            画像は文字が読みやすい横長写真を選び、altには写真から分かる内容を書く。
+        -->
+        <section class="season-hero" aria-labelledby="season-title">
+            <img class="season-hero-image" src="images\winter\白川郷.jpg" alt="白川郷">
+            <div class="season-hero-content">
+                <p class="hero-kicker"><span>04</span> WINTER JOURNEY</p>
+                <h1 id="season-title">光と水をめぐる、<br><strong>日本の冬。</strong></h1>
+                <p class="hero-lead">風に揺れる花、どこまでも透き通る海、<br>山あいを静かに流れる清流。<br>夏だからこそ出会える3つの風景へ。</p>
+                <a class="hero-button" href="#destinations">おすすめの場所を見る<span aria-hidden="true">↓</span></a>
             </div>
-        </div>
-            
-        <div class="feature reverse">
-            <div class="feature-text">
-                <h2>蔵王の『樹氷（スノウモンスター）』</h2>
-                <p>特別な気象条件が生み出す、自然の芸術「スノーモンスター」。強風と冷水滴が木々に凍り付き、巨大な白い塊となって山一面に立ち並ぶ姿は圧巻のスケールです。夜間はカラフルにライトアップされ、昼とは違う幻想的な姿を見せます。</p>
-                <img src="images\winter\樹氷.jpg" alt="樹氷">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                <div>
+            <p class="hero-location">SHIRAKAWAGOU <span>GIFU</span></p>
+        </section>
+
+        <!-- 【変更】紹介数、季節名、導入文を実際の内容と一致させる。 -->
+        <section class="season-intro" id="destinations" aria-labelledby="destinations-title">
+            <div class="season-intro-number" aria-hidden="true">03</div>
+            <div class="season-intro-heading">
+                <p class="section-kicker">PLACES TO VISIT</p>
+                <h2 id="destinations-title">冬に訪れたい、<br>3つの風景</h2>
             </div>
-        </div>
-        <div class="feature">
-            <div class="feature-text">
-                <h2>あしかがフラワーパークのイルミネーション</h2>
-                <p>日本三大イルミネーションに数えられる、冬の夜を彩る光の祭典。数百万人ものLEDが輝き、名物の「光の藤」など、園内の自然を活かした美しい光の演出が施されます。冬の澄んだ夜空に輝く、圧倒的な煌めきの世界を体感できます。</p>
-                <img src="images\winter\あしかがフラワーパーク.jpg" alt="あしかがフラワーパーク">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe
+            <p class="season-intro-copy">北から南へ、日本の夏は表情豊かです。花の色、海の青、森と川の緑。気分に合わせて、心に残る夏景色を選んでください。</p>
+        </section>
+
+        <div class="destination-list">
+            <!--
+                【変更：おすすめ場所1】画像、alt、英語表記、地域、見出し、説明、見どころ3点、地図を変更する。
+                idはページ内で重複しない英小文字にする。
+            -->
+            <article class="destination" id="furano">
+                <div class="destination-media">
+                    <img src="images\winter\白川郷.jpg" alt="紫色のラベンダーが一面に広がる富良野の花畑" loading="lazy">
+                    <p class="image-caption"><span>01</span> SHIRAKAWAGOU, GIFU</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">岐阜・白川郷</p>
+                    <h2>色と香りに包まれる<br>ラベンダー畑</h2>
+                    <p class="destination-description">丘を埋め尽くすラベンダーと、幾重にも重なる花の帯。広い空の下で鮮やかな色彩を眺めながら、北海道らしい伸びやかな夏を感じられます。</p>
+                    <ul class="destination-points" aria-label="白川郷の見どころ">
+                        <li>一面の花畑</li>
+                        <li>丘の風景</li>
+                        <li>爽やかな空気</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>白川郷</h3>
+                        </div>
+                        <!-- 【変更】q=以降とtitleを同じ施設名へ変更する。 -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <!--
+                【変更：おすすめ場所2】場所1と同じ項目を変更する。
+                destination--reverseは写真と文章を左右交互にするクラスなので残す。
+            -->
+            <article class="destination destination--reverse" id="miyakojima">
+                <div class="destination-media">
+                    <img src="images\winter\樹氷.jpg" alt="蔵王の「樹氷（スノウモンスター）」" loading="lazy">
+                    <p class="image-caption"><span>02</span> ZOUOU, YAMAGATA</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">山形・蔵王</p>
+                    <h2>水平線まで続く<br>宮古ブルー</h2>
+                    <p class="destination-description">白い砂浜の先に、淡い水色から深い青へと移ろう海が広がります。空と海の境目を眺めるだけでも、日常から離れた穏やかな時間を過ごせます。</p>
+                    <ul class="destination-points" aria-label="蔵王の見どころ">
+                        <li>透明度の高い海</li>
+                        <li>白い砂浜</li>
+                        <li>開放的な空</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>蔵王の樹氷</h3>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 【変更：おすすめ場所3】場所1と同じ項目を変更する。 -->
+            <article class="destination" id="shimanto">
+                <div class="destination-media">
+                    <img src="images\winter\あしかがフラワーパーク.jpg" alt="あしかがフラワーパークのイルミネーション" loading="lazy">
+                    <p class="image-caption"><span>03</span> ASHIKAGA, TOCHIGI</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">栃木・あしかがフラワーパーク</p>
+                    <h2>山の緑を映す<br>静かな清流</h2>
+                    <p class="destination-description">深い緑に囲まれた川面と、景色に溶け込む沈下橋。水の音や木々を渡る風を感じながら、ゆっくりと流れる夏の時間を楽しめます。</p>
+                    <ul class="destination-points" aria-label="あしかがフラワーパークの見どころ">
+                        <li>穏やかな清流</li>
+                        <li>沈下橋の景観</li>
+                        <li>豊かな山の緑</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>あしかがフラワーパーク</h3>
+                        </div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.923741566415!2d139.5174472758162!3d36.314156072389615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f24a910deedd3%3A0x631a0f5f26b9c043!2z44GC44GX44GL44GM44OV44Op44Ov44O844OR44O844Kv!5e0!3m2!1sja!2sjp!4v1784466155051!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                <div>
-            </div>
+                    </div>
+                </div>
+            </article>
         </div>
+
+        <!-- 【変更】季節名と、その季節に合う旅行上の注意3点へ書き換える。 -->
+        <section class="travel-note" aria-labelledby="travel-note-title">
+            <div class="travel-note-heading">
+                <p class="section-kicker">TRAVEL NOTE</p>
+                <h2 id="travel-note-title">冬旅を心地よく<br>楽しむために</h2>
+            </div>
+            <div class="travel-note-grid">
+                <article>
+                    <span>01</span>
+                    <h3>余裕のある計画を</h3>
+                    <p>移動時間や休憩を見込み、詰め込みすぎない旅程にすると景色をゆっくり楽しめます。</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>暑さへの備えを</h3>
+                    <p>こまめな水分補給と休憩を心がけ、帽子や日よけも準備して出かけましょう。</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>風景を大切に</h3>
+                    <p>地域のルールと自然環境に配慮し、訪れた場所の美しさを次の人へつなげましょう。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 【変更】前・次の季節に合わせてhrefと表示名を変更する。対応表はREADME.mdを参照する。 -->
+        <nav class="season-pager" aria-label="季節ページの移動">
+            <a href="autumn.html"><span>PREVIOUS</span>秋のページへ</a>
+            <a href="index.html" class="season-pager-home"><span>HOME</span>四季のトップへ</a>
+            <a href="spring.html"><span>NEXT</span>春のページへ</a>
+        </nav>
     </main>
+
+    <!-- 【固定】全ページ共通フッター。現在の季節だけaria-current="page"を付ける。 -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -91,9 +212,9 @@
             </div>
             <nav class="site-footer-nav" aria-label="フッターナビゲーション">
                 <a href="spring.html">春</a>
-                <a href="summer.html">夏</a>
+                <a href="summer.html" aria-current="page">夏</a>
                 <a href="autumn.html">秋</a>
-                <a href="winter.html" aria-current="page">冬</a>
+                <a href="winter.html">冬</a>
             </nav>
             <p class="site-copyright"><small>&copy; 2026 日本の四季を味わう / 1班</small></p>
         </div>
