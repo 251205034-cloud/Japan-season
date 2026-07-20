@@ -5,27 +5,33 @@
         <title>名城大学情報工学部へのアクセス</title>
         <meta name="description" content="アクセス">
         <meta name="viewport" content="width=device-width">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="js/script.js"></script>
         <link href="css/common.css" rel="stylesheet">
         <link href="css/access.css" rel="stylesheet">
+        <link href="css/site-shell.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+        <script src="js/main.js?v=20260720" defer></script>
     </head>
-    <body>
-        <header class="header">
-            <div class="header-inner">
-                <a class="header-logo" href="index.html">
-                    <img src="images/common/logo.png" alt="ロゴ">
+    <body class="utility-page access-page">
+        <header class="site-header">
+            <div class="site-header-inner">
+                <a class="site-brand" href="index.html" aria-label="日本の四季 トップページ">
+                    <span class="site-brand-ja">日本の四季</span>
+                    <span class="site-brand-en">SEASONS OF JAPAN</span>
                 </a>
-                <button class="toggle-menu-button"></button>
-                <div class="header-site-menu">
-                    <nav class="site-menu">
+                <button class="site-menu-button" type="button" aria-label="メニューを開く" aria-controls="global-navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="site-navigation" id="global-navigation">
+                    <nav class="site-navigation-menu" aria-label="季節別ページ">
                         <ul>
-                            <li><a href="concept.html">コンセプト</a></li>
-                            <li><a href="members.html">メンバー</a></li>
-                            <li><a href="access.html">アクセス</a></li>
+                            <li><a href="spring.html"><span>01</span>春</a></li>
+                            <li><a href="summer.html"><span>02</span>夏</a></li>
+                            <li><a href="autumn.html"><span>03</span>秋</a></li>
+                            <li><a href="winter.html"><span>04</span>冬</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -40,18 +46,20 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1115.2360323906423!2d136.9784476069544!3d35.135117376735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037ad5058b80ef%3A0xead84a215623ada8!2z44CSNDY4LTAwNzMg5oSb55-l55yM5ZCN5Y-k5bGL5biC5aSp55m95Yy65aGp6Yec5Y-j77yR5LiB55uu77yU77yR77yR!5e1!3m2!1sja!2sjp!4v1750660671871!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </main>
-        <footer class="footer">
-            <nav class="site-menu">
-                <ul>
-                    <li><a href="concept.html">コンセプト</a></li>
-                    <li><a href="members.html">メンバー</a></li>
-                    <li><a href="access.html">アクセス</a></li>
-                </ul>
-            </nav>
-            <a class="footer-logo" href="index.html">
-                <img src="images/common/logo_footer.png" alt="ロゴ">
-            </a>
-            <p class="copyright"><small>&copy;名城大学情報工学部(嘘)</small></p>
+        <footer class="site-footer">
+            <div class="site-footer-inner">
+                <div>
+                    <p class="site-footer-title">日本の四季</p>
+                    <p class="site-footer-subtitle">SEASONS OF JAPAN</p>
+                </div>
+                <nav class="site-footer-nav" aria-label="フッターナビゲーション">
+                    <a href="spring.html">春</a>
+                    <a href="summer.html">夏</a>
+                    <a href="autumn.html">秋</a>
+                    <a href="winter.html">冬</a>
+                </nav>
+                <p class="site-copyright"><small>&copy; 2026 日本の四季を味わう / 1班</small></p>
+            </div>
         </footer>
     </body>
 </html>

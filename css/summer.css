@@ -1,0 +1,964 @@
+@charset "utf-8";
+
+:root {
+    --ink: #18313a;
+    --deep-blue: #0c5669;
+    --summer-blue: #0e8797;
+    --sky: #64c3d0;
+    --sun: #f0bf4d;
+    --paper: #f8f4e9;
+    --sand: #e9dfca;
+    --white: #ffffff;
+    --muted: #63747a;
+    --line: rgba(24, 49, 58, 0.18);
+    --serif: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    --sans: "Zen Kaku Gothic New", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol,
+figure,
+p,
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button {
+    color: inherit;
+    font: inherit;
+}
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 100;
+    padding: 10px 16px;
+    color: var(--white);
+    background: var(--ink);
+    transform: translateY(-160%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+.header {
+    position: relative;
+    z-index: 30;
+    height: 88px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(248, 244, 233, 0.96);
+}
+
+.header-inner {
+    width: min(100% - 64px, 1280px);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1px;
+    line-height: 1;
+}
+
+.brand-ja {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.brand-en {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+}
+
+.site-menu ul {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.site-menu a {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 10px 0;
+    font-family: var(--serif);
+    font-weight: 600;
+}
+
+.site-menu a span {
+    color: var(--muted);
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+}
+
+.site-menu a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
+}
+
+.site-menu a:hover::after,
+.site-menu a:focus-visible::after,
+.site-menu a[aria-current="page"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.site-menu a[aria-current="page"] {
+    color: var(--summer-blue);
+}
+
+.toggle-menu-button {
+    display: none;
+}
+
+.summer-hero {
+    position: relative;
+    min-height: clamp(650px, calc(100svh - 88px), 900px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--white);
+    background: var(--deep-blue);
+}
+
+.summer-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(90deg, rgba(4, 40, 53, 0.82) 0%, rgba(4, 40, 53, 0.45) 42%, rgba(4, 40, 53, 0.03) 72%),
+        linear-gradient(0deg, rgba(4, 40, 53, 0.5) 0%, transparent 40%);
+}
+
+.summer-hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: -180px;
+    z-index: 1;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 50%;
+    box-shadow: 0 0 0 46px rgba(255, 255, 255, 0.06), 0 0 0 92px rgba(255, 255, 255, 0.04);
+}
+
+.summer-hero-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.summer-hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(100% - 64px, 1280px);
+    margin: 0 auto;
+    padding: 82px 0 100px;
+}
+
+.hero-kicker,
+.section-kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+}
+
+.hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.hero-kicker span {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+}
+
+.summer-hero h1 {
+    max-width: 820px;
+    font-family: var(--serif);
+    font-size: clamp(48px, 6.4vw, 88px);
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    line-height: 1.35;
+    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.summer-hero h1 strong {
+    color: #fff7c7;
+    font-weight: 600;
+}
+
+.hero-lead {
+    margin-top: 28px;
+    font-size: clamp(14px, 1.4vw, 17px);
+    letter-spacing: 0.06em;
+    line-height: 2;
+}
+
+.hero-button {
+    min-height: 58px;
+    margin-top: 38px;
+    padding: 0 25px 0 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 38px;
+    color: var(--ink);
+    background: #fff7c7;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-button:hover,
+.hero-button:focus-visible {
+    color: var(--white);
+    background: var(--summer-blue);
+    transform: translateY(-2px);
+}
+
+.hero-location {
+    position: absolute;
+    right: 36px;
+    bottom: 28px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.hero-location span {
+    padding-left: 13px;
+    border-left: 1px solid rgba(255, 255, 255, 0.55);
+    opacity: 0.72;
+}
+
+.summer-intro {
+    width: min(100% - 64px, 1180px);
+    margin: 0 auto;
+    padding: 128px 0 106px;
+    display: grid;
+    grid-template-columns: 110px minmax(280px, 0.8fr) minmax(300px, 1fr);
+    align-items: end;
+    gap: 50px;
+}
+
+.summer-intro-number {
+    color: rgba(14, 135, 151, 0.14);
+    font-family: var(--serif);
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 0.8;
+}
+
+.section-kicker {
+    margin-bottom: 14px;
+    color: var(--summer-blue);
+}
+
+.summer-intro h2,
+.destination-content h2,
+.travel-note h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.summer-intro h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.5;
+}
+
+.summer-intro-copy {
+    padding-bottom: 4px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2.15;
+}
+
+.destination-list {
+    width: min(100% - 64px, 1180px);
+    margin: 0 auto;
+}
+
+.destination {
+    padding: 108px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+    align-items: start;
+    gap: clamp(50px, 7vw, 98px);
+    border-top: 1px solid var(--line);
+}
+
+.destination--reverse .destination-media {
+    order: 2;
+}
+
+.destination-media {
+    position: relative;
+}
+
+.destination-media::before {
+    content: "";
+    position: absolute;
+    top: -17px;
+    left: -17px;
+    width: 78%;
+    height: 64%;
+    border-top: 1px solid var(--sun);
+    border-left: 1px solid var(--sun);
+    pointer-events: none;
+}
+
+.destination--reverse .destination-media::before {
+    right: -17px;
+    left: auto;
+    border-right: 1px solid var(--sun);
+    border-left: 0;
+}
+
+.destination-media img {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    box-shadow: 0 24px 70px rgba(19, 51, 61, 0.13);
+}
+
+.image-caption {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+}
+
+.image-caption span {
+    color: var(--summer-blue);
+}
+
+.destination-content {
+    padding-top: 5px;
+}
+
+.destination-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--summer-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.destination-area::before {
+    content: "";
+    width: 34px;
+    height: 1px;
+    background: currentColor;
+}
+
+.destination-content h2 {
+    margin-top: 19px;
+    font-size: clamp(31px, 3.5vw, 48px);
+    line-height: 1.55;
+}
+
+.destination-description {
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+.destination-points {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.destination-points li {
+    padding: 7px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.45);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.map-card {
+    margin-top: 36px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--white);
+}
+
+.map-card-heading {
+    min-height: 83px;
+    padding: 17px 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.map-card-heading p {
+    color: var(--summer-blue);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.map-card-heading h3 {
+    margin-top: 3px;
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+.map-card-heading a {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.map-card-heading a:hover,
+.map-card-heading a:focus-visible {
+    color: var(--summer-blue);
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 270px;
+    display: block;
+    border: 0;
+    filter: saturate(0.8) contrast(0.96);
+}
+
+.travel-note {
+    margin-top: 30px;
+    padding: 112px max(32px, calc((100vw - 1180px) / 2));
+    display: grid;
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(60px, 8vw, 120px);
+    color: var(--white);
+    background: var(--deep-blue);
+}
+
+.travel-note .section-kicker {
+    color: #9ed9df;
+}
+
+.travel-note h2 {
+    font-size: clamp(32px, 4vw, 50px);
+    line-height: 1.55;
+}
+
+.travel-note-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.travel-note-grid article {
+    padding: 28px 24px 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.travel-note-grid article:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.travel-note-grid span {
+    color: #9ed9df;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.travel-note-grid h3 {
+    margin-top: 15px;
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.travel-note-grid p {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.season-pager {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-bottom: 1px solid var(--line);
+    background: var(--white);
+}
+
+.season-pager a {
+    min-height: 150px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-right: 1px solid var(--line);
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.season-pager a:last-child {
+    border-right: 0;
+}
+
+.season-pager a span {
+    color: var(--muted);
+    font-family: var(--sans);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.season-pager a:hover,
+.season-pager a:focus-visible {
+    color: var(--white);
+    background: var(--summer-blue);
+}
+
+.season-pager a:hover span,
+.season-pager a:focus-visible span {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.footer {
+    color: #eef5f4;
+    background: #132c34;
+}
+
+.footer-inner {
+    width: min(100% - 64px, 1280px);
+    min-height: 270px;
+    margin: 0 auto;
+    padding: 58px 0 34px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 54px;
+}
+
+.footer-title {
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+}
+
+.footer-subtitle {
+    margin-top: 7px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 32px;
+    font-family: var(--serif);
+}
+
+.footer-nav a {
+    transition: opacity 0.2s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible,
+.footer-nav a[aria-current="page"] {
+    opacity: 0.55;
+}
+
+.copyright {
+    grid-column: 1 / -1;
+    align-self: end;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.46);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+:focus-visible {
+    outline: 3px solid var(--sun);
+    outline-offset: 4px;
+}
+
+@media (max-width: 1050px) {
+    .summer-intro {
+        grid-template-columns: 90px minmax(0, 1fr);
+    }
+
+    .summer-intro-copy {
+        grid-column: 2;
+        max-width: 620px;
+    }
+
+    .destination {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .destination--reverse .destination-media {
+        order: initial;
+    }
+
+    .destination-media {
+        width: min(100%, 780px);
+    }
+
+    .destination--reverse .destination-media {
+        margin-left: auto;
+    }
+
+    .destination-content {
+        width: min(100%, 720px);
+    }
+
+    .destination--reverse .destination-content {
+        margin-left: auto;
+    }
+
+    .travel-note {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .header {
+        position: sticky;
+        top: 0;
+        height: 68px;
+        background: rgba(248, 244, 233, 0.98);
+    }
+
+    .header-inner,
+    .summer-hero-content,
+    .summer-intro,
+    .destination-list,
+    .footer-inner {
+        width: min(100% - 40px, 1280px);
+    }
+
+    .brand-ja {
+        font-size: 18px;
+    }
+
+    .brand-en {
+        font-size: 8px;
+    }
+
+    .toggle-menu-button {
+        width: 42px;
+        height: 42px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 5px;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .toggle-menu-button span {
+        height: 1px;
+        background: var(--ink);
+    }
+
+    .header-site-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        padding: 22px 20px 28px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+        box-shadow: 0 12px 30px rgba(24, 49, 58, 0.12);
+    }
+
+    .header-site-menu.is-show {
+        display: block;
+    }
+
+    .site-menu ul {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .site-menu li + li {
+        border-left: 1px solid var(--line);
+    }
+
+    .site-menu a {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .summer-hero {
+        min-height: calc(100svh - 68px);
+        align-items: flex-end;
+    }
+
+    .summer-hero::before {
+        background:
+            linear-gradient(90deg, rgba(4, 40, 53, 0.56), rgba(4, 40, 53, 0.05)),
+            linear-gradient(0deg, rgba(4, 40, 53, 0.85) 0%, rgba(4, 40, 53, 0.13) 72%);
+    }
+
+    .summer-hero::after {
+        width: 260px;
+        height: 260px;
+    }
+
+    .summer-hero-image {
+        object-position: 58% center;
+    }
+
+    .summer-hero-content {
+        padding: 110px 0 82px;
+    }
+
+    .summer-hero h1 {
+        font-size: clamp(40px, 12vw, 62px);
+        letter-spacing: 0.04em;
+    }
+
+    .hero-lead {
+        font-size: 14px;
+    }
+
+    .hero-location {
+        display: none;
+    }
+
+    .summer-intro {
+        padding: 84px 0 75px;
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .summer-intro-number {
+        font-size: 68px;
+    }
+
+    .summer-intro-copy {
+        grid-column: auto;
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    .destination {
+        padding: 80px 0;
+        gap: 42px;
+    }
+
+    .destination-media::before {
+        top: -10px;
+        left: -10px;
+    }
+
+    .destination--reverse .destination-media::before {
+        right: -10px;
+    }
+
+    .destination-content h2 {
+        font-size: 32px;
+    }
+
+    .destination-description {
+        font-size: 14px;
+    }
+
+    .map-card-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    .map-card iframe {
+        height: 240px;
+    }
+
+    .travel-note {
+        padding: 80px 20px;
+        gap: 45px;
+    }
+
+    .travel-note h2 {
+        font-size: 34px;
+    }
+
+    .travel-note-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .travel-note-grid article {
+        padding: 24px 20px;
+        border-right: 1px solid rgba(255, 255, 255, 0.22);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .season-pager a {
+        min-height: 115px;
+        padding: 20px 12px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .footer-inner {
+        min-height: 320px;
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .footer-nav {
+        gap: 24px;
+    }
+
+    .copyright {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 430px) {
+    .hero-button {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .summer-intro h2,
+    .destination-content h2,
+    .travel-note h2 {
+        font-size: 30px;
+    }
+
+    .season-pager {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .season-pager-home {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        border-top: 1px solid var(--line);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
