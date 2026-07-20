@@ -621,11 +621,12 @@ html {
 
 @media (max-width: 1050px) {
     .season-intro {
-        grid-template-columns: 90px minmax(0, 1fr);
+        grid-template-columns: 1fr;
+        gap: 22px;
     }
 
     .season-intro-copy {
-        grid-column: 2;
+        grid-column: auto;
         max-width: 620px;
     }
 

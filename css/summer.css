@@ -315,7 +315,7 @@ button {
     margin: 0 auto;
     padding: 128px 0 106px;
     display: grid;
-    grid-template-columns: 110px minmax(280px, 0.8fr) minmax(300px, 1fr);
+    grid-template-columns: minmax(380px, 0.8fr) minmax(300px, 1fr);
     align-items: end;
     gap: 50px;
 }
@@ -686,11 +686,12 @@ button {
 
 @media (max-width: 1050px) {
     .summer-intro {
-        grid-template-columns: 90px minmax(0, 1fr);
+        grid-template-columns: 1fr;
+        gap: 22px;
     }
 
     .summer-intro-copy {
-        grid-column: 2;
+        grid-column: auto;
         max-width: 620px;
     }
 
@@ -790,7 +791,7 @@ button {
         gap: 0;
     }
 
-    .site-menu li + li {
+    .site-menu li+li {
         border-left: 1px solid var(--line);
     }
 
