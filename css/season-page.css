@@ -305,7 +305,7 @@ html {
     margin: 0 auto;
     padding: 128px 0 106px;
     display: grid;
-    grid-template-columns: 110px minmax(280px, 0.8fr) minmax(300px, 1fr);
+    grid-template-columns: minmax(380px, 0.8fr) minmax(300px, 1fr);
     align-items: end;
     gap: 50px;
 }
@@ -334,6 +334,8 @@ html {
 .season-intro h2 {
     font-size: clamp(32px, 4vw, 52px);
     line-height: 1.5;
+    word-break: keep-all;
+    overflow-wrap: normal;
 }
 
 .season-intro-copy {
