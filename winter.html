@@ -16,10 +16,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link href="css/site-shell.css" rel="stylesheet">
     <!-- 【固定】季節ごとの配色はbodyのテーマクラスで切り替わるため、このCSSパスとCSS本体は変更しない。 -->
-    <link href="templates/season-page/season-page.css" rel="stylesheet">
+    <link href="css\season-page.css" rel="stylesheet">
     <script src="js/main.js?v=20260720" defer></script>
 </head>
 
@@ -27,6 +29,7 @@
     【変更】theme-summerを作成する季節に合わせて1つだけ指定する。
     春: theme-spring / 夏: theme-summer / 秋: theme-autumn / 冬: theme-winter
 -->
+
 <body class="season-detail-page theme-winter">
     <a class="skip-link" href="#main-content">本文へ移動</a>
 
@@ -38,7 +41,8 @@
                 <span class="site-brand-en">SEASONS OF JAPAN</span>
             </a>
 
-            <button class="site-menu-button" type="button" aria-label="メニューを開く" aria-controls="global-navigation" aria-expanded="false">
+            <button class="site-menu-button" type="button" aria-label="メニューを開く" aria-controls="global-navigation"
+                aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -96,7 +100,8 @@
                 <div class="destination-content">
                     <p class="destination-area">岐阜・白川郷</p>
                     <h2>色と香りに包まれる<br>ラベンダー畑</h2>
-                    <p class="destination-description">丘を埋め尽くすラベンダーと、幾重にも重なる花の帯。広い空の下で鮮やかな色彩を眺めながら、北海道らしい伸びやかな夏を感じられます。</p>
+                    <p class="destination-description">丘を埋め尽くすラベンダーと、幾重にも重なる花の帯。広い空の下で鮮やかな色彩を眺めながら、北海道らしい伸びやかな夏を感じられます。
+                    </p>
                     <ul class="destination-points" aria-label="白川郷の見どころ">
                         <li>一面の花畑</li>
                         <li>丘の風景</li>
@@ -107,11 +112,14 @@
                             <div>
                                 <p>ACCESS MAP</p>
                                 <h3>白川郷</h3>
+                            </div>
+                            <!-- 【変更】q=以降とtitleを同じ施設名へ変更する。 -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
-                        <!-- 【変更】q=以降とtitleを同じ施設名へ変更する。 -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
-                </div>
             </article>
 
             <!--
@@ -126,7 +134,8 @@
                 <div class="destination-content">
                     <p class="destination-area">山形・蔵王</p>
                     <h2>水平線まで続く<br>宮古ブルー</h2>
-                    <p class="destination-description">白い砂浜の先に、淡い水色から深い青へと移ろう海が広がります。空と海の境目を眺めるだけでも、日常から離れた穏やかな時間を過ごせます。</p>
+                    <p class="destination-description">白い砂浜の先に、淡い水色から深い青へと移ろう海が広がります。空と海の境目を眺めるだけでも、日常から離れた穏やかな時間を過ごせます。
+                    </p>
                     <ul class="destination-points" aria-label="蔵王の見どころ">
                         <li>透明度の高い海</li>
                         <li>白い砂浜</li>
@@ -137,10 +146,13 @@
                             <div>
                                 <p>ACCESS MAP</p>
                                 <h3>蔵王の樹氷</h3>
+                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
-                </div>
             </article>
 
             <!-- 【変更：おすすめ場所3】場所1と同じ項目を変更する。 -->
@@ -163,10 +175,13 @@
                             <div>
                                 <p>ACCESS MAP</p>
                                 <h3>あしかがフラワーパーク</h3>
+                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.923741566415!2d139.5174472758162!3d36.314156072389615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f24a910deedd3%3A0x631a0f5f26b9c043!2z44GC44GX44GL44GM44OV44Op44Ov44O844OR44O844Kv!5e0!3m2!1sja!2sjp!4v1784466155051!5m2!1sja!2sjp"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.923741566415!2d139.5174472758162!3d36.314156072389615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f24a910deedd3%3A0x631a0f5f26b9c043!2z44GC44GX44GL44GM44OV44Op44Ov44O844OR44O844Kv!5e0!3m2!1sja!2sjp!4v1784466155051!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
-                </div>
             </article>
         </div>
 
