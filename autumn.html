@@ -1,21 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
-    <title>名城大学情報工学部のコンセプト</title>
-    <meta name="description" content="コンセプト">
-    <meta name="viewport" content="width=device-width">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/season.css" rel="stylesheet">
-    <link href="css/site-shell.css" rel="stylesheet">
+
+    <!-- 【変更】紹介する3か所が分かる、ページ固有の説明文に書き換える。 -->
+    <meta name="description" content="嵐山、ひたち海浜公園、阿蘇。日本の秋に訪れたい3つの風景を紹介します。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 【変更】季節のテーマ色に合わせる。色の候補はREADME.mdを参照する。 -->
+    <meta name="theme-color" content="#b45a2b">
+
+    <!-- 【変更】「夏」を作成する季節名へ置き換える。 -->
+    <title>夏のおすすめ旅 | 日本の四季を味わう</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="css/site-shell.css" rel="stylesheet">
+    <!-- 【固定】季節ごとの配色はbodyのテーマクラスで切り替わるため、このCSSパスとCSS本体は変更しない。 -->
+    <link href="templates/season-page/season-page.css" rel="stylesheet">
     <script src="js/main.js?v=20260720" defer></script>
 </head>
 
-<body class="season-page autumn-page">
+<!--
+    【変更】theme-summerを作成する季節に合わせて1つだけ指定する。
+    春: theme-spring / 夏: theme-summer / 秋: theme-autumn / 冬: theme-winter
+-->
+
+<body class="season-detail-page theme-autumn">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <!-- 【固定】全ページ共通ヘッダー。現在の季節だけaria-current="page"を付ける。 -->
     <header class="site-header">
         <div class="site-header-inner">
             <a class="site-brand" href="index.html" aria-label="日本の四季 トップページ">
@@ -23,7 +41,8 @@
                 <span class="site-brand-en">SEASONS OF JAPAN</span>
             </a>
 
-            <button class="site-menu-button" type="button" aria-label="メニューを開く" aria-controls="global-navigation" aria-expanded="false">
+            <button class="site-menu-button" type="button" aria-label="メニューを開く" aria-controls="global-navigation"
+                aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -33,62 +52,169 @@
                 <nav class="site-navigation-menu" aria-label="季節別ページ">
                     <ul>
                         <li><a href="spring.html"><span>01</span>春</a></li>
-                        <li><a href="summer.html"><span>02</span>夏</a></li>
-                        <li><a href="autumn.html" aria-current="page"><span>03</span>秋</a></li>
+                        <li><a href="summer.html" aria-current="page"><span>02</span>夏</a></li>
+                        <li><a href="autumn.html"><span>03</span>秋</a></li>
                         <li><a href="winter.html"><span>04</span>冬</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-    <main class="main">
-        <div class="title">
-            <h1>Concept</h1>
-            <p>情報工学部について</p>
-        </div>
-        <div class="feature">
-            <div class="feature-text">
-                <h2>嵐山・渡月橋の紅葉</h2>
-                <p>渡月橋と紅葉の織り成す絶景を楽しめます。</p>
-                <img src="images\autumn\嵐山.jpg.webp" alt="嵐山">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.753430474723!2d135.67558608949184!3d35.01287691992871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001075300916977%3A0xec14f8e82496283d!2z5rih5pyI5qmL!5e0!3m2!1sja!2sjp!4v1784480124318!5m2!1sja!2sjp"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
+
+    <main id="main-content">
+        <!--
+            【変更】ヒーロー画像、代替テキスト、番号、英語季節名、見出し、説明文、撮影地を変更する。
+            画像は文字が読みやすい横長写真を選び、altには写真から分かる内容を書く。
+        -->
+        <section class="season-hero" aria-labelledby="season-title">
+            <img class="season-hero-image" src="images\autumn\嵐山.jpg.webp" alt="嵐山の渡月橋と紅葉の織り成す景色">
+            <div class="season-hero-content">
+                <p class="hero-kicker"><span>03</span> AUTUMN JOURNEY</p>
+                <h1 id="season-title">木々が色づく、<br><strong>日本の秋。</strong></h1>
+                <p class="hero-lead">色なき風、ひらひらと舞う紅葉、<br>夕暮れを映す川面。<br>秋の儚げな3つの風景へ。</p>
+                <a class="hero-button" href="#destinations">おすすめの場所を見る<span aria-hidden="true">↓</span></a>
             </div>
-        </div>
-        <div class="feature reverse">
-            <div class="feature-text">
-                <h2>国営ひたち海浜公園のコキアの紅葉</h2>
-                <p>美しいコキアの紅葉と海の景色を一望できます．</p>
-                <img src="images\autumn\ひたち海浜公園.jpg">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12844.550734901919!2d140.59648679999995!3d36.40586400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60218b1d845e4441%3A0x767e1dea03e6f0e1!2z5Zu95Za244Gy44Gf44Gh5rW35rWc5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1784480205463!5m2!1sja!2sjp"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
+            <p class="hero-location">MIYAKOJIMA <span>OKINAWA</span></p>
+        </section>
+
+        <!-- 【変更】紹介数、季節名、導入文を実際の内容と一致させる。 -->
+        <section class="season-intro" id="destinations" aria-labelledby="destinations-title">
+            <div class="season-intro-number" aria-hidden="true">03</div>
+            <div class="season-intro-heading">
+                <p class="section-kicker">PLACES TO VISIT</p>
+                <h2 id="destinations-title">秋に訪れたい、<br>3つの風景</h2>
             </div>
-        </div>
-        <div class="feature">
-            <div class="feature-text">
-                <h2>阿蘇の大観峰のススキと雲海</h2>
-                <p>ススキと雲海の壮大な景色を楽しめます。</p>
-                <img src="images\autumn\阿蘇.jpg">
-                <div class="map">
-                    <h2>アクセスマップ</h2>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26770.247018045462!2d131.0673096!3d32.996369599999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541244778a75a13%3A0xd2d7c47437373478!2z5aSn6Kaz5bOw!5e0!3m2!1sja!2sjp!4v1784480431045!5m2!1sja!2sjp"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <p class="season-intro-copy">北から南へ、日本の秋は表情豊かです。紅葉と清流の静けさ、コキアの情熱的な赤、ススキと雲海の織り成す絶景。気分に合わせて、心に残る秋景色を選んでください。
+            </p>
+        </section>
+
+        <div class="destination-list">
+            <!--
+                【変更：おすすめ場所1】画像、alt、英語表記、地域、見出し、説明、見どころ3点、地図を変更する。
+                idはページ内で重複しない英小文字にする。
+            -->
+            <article class="destination" id="arashiyama">
+                <div class="destination-media">
+                    <img src="images\autumn\嵐山.jpg.webp" alt="嵐山の渡月橋と紅葉の織り成す景色" loading="lazy">
+                    <p class="image-caption"><span>03</span> ARASHIYAMA， KYOTO</p>
                 </div>
-            </div>
+                <div class="destination-content">
+                    <p class="destination-area">京都・嵐山</p>
+                    <h2>川のせせらぎと紅葉<br>渡月橋</h2>
+                    <p class="destination-description">嵐山の渡月橋は、紅葉の季節に特に美しく、川のせせらぎと紅葉の景色を楽しめるスポットです。</p>
+                    <ul class="destination-points" aria-label="嵐山の見どころ">
+                        <li>渡月橋</li>
+                        <li>紅葉</li>
+                        <li>川のせせらぎ</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>嵐山・渡月橋</h3>
+                            </div>
+                            <!-- 【変更】q=以降とtitleを同じ施設名へ変更する。 -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.753430474723!2d135.67558608949184!3d35.01287691992871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001075300916977%3A0xec14f8e82496283d!2z5rih5pyI5qmL!5e0!3m2!1sja!2sjp!4v1784480124318!5m2!1sja!2sjp"
+                                title="嵐山・渡月橋の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+            </article>
+
+            <!--
+                【変更：おすすめ場所2】場所1と同じ項目を変更する。
+                destination--reverseは写真と文章を左右交互にするクラスなので残す。
+            -->
+            <article class="destination destination--reverse" id="hitachi">
+                <div class="destination-media">
+                    <img src="images\autumn\ひたち海浜公園.jpg" alt="コキアの赤い花が咲くひたち海浜公園" loading="lazy">
+                    <p class="image-caption"><span>03</span> HITACHI, IBARAKI</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">茨城県・ひたち</p>
+                    <h2>赤い花が咲く<br>ひたち海浜公園</h2>
+                    <p class="destination-description">コキアの赤い花が咲くひたち海浜公園は、秋の風景を楽しむのに最適なスポットです。</p>
+                    <ul class="destination-points" aria-label="ひたち海浜公園の見どころ">
+                        <li>赤い花</li>
+                        <li>海浜</li>
+                        <li>秋の風景</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>ひたち海浜公園</h3>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12844.550734901919!2d140.59648679999995!3d36.40586400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60218b1d845e4441%3A0x767e1dea03e6f0e1!2z5Zu95Za244Gy44Gf44Gh5rW35rWc5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1784480205463!5m2!1sja!2sjp"
+                                    title="与那覇前浜ビーチの地図" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+            </article>
+
+            <!-- 【変更：おすすめ場所3】場所1と同じ項目を変更する。 -->
+            <article class="destination" id="aso">
+                <div class="destination-media">
+                    <img src="images\autumn\阿蘇.jpg" alt="阿蘇のススキと雲海" loading="lazy">
+                    <p class="image-caption"><span>03</span> ASO, KUMAMOTO</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">熊本県・阿蘇</p>
+                    <h2>ススキと雲海の風景を楽しむ<br>阿蘇</h2>
+                    <p class="destination-description">阿蘇のススキと雲海の幻想的な風景を楽しめます。</p>
+                    <ul class="destination-points" aria-label="阿蘇の見どころ">
+                        <li>ススキの花畑</li>
+                        <li>雲海の景観</li>
+                        <li>豊かな山の緑</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>阿蘇・大観峰</h3>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26770.247018045462!2d131.0673096!3d32.996369599999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541244778a75a13%3A0xd2d7c47437373478!2z5aSn6Kaz5bOw!5e0!3m2!1sja!2sjp!4v1784480431045!5m2!1sja!2sjp"
+                                    title="阿蘇・大観峰の地図" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+            </article>
         </div>
+
+        <!-- 【変更】季節名と、その季節に合う旅行上の注意3点へ書き換える。 -->
+        <section class="travel-note" aria-labelledby="travel-note-title">
+            <div class="travel-note-heading">
+                <p class="section-kicker">TRAVEL NOTE</p>
+                <h2 id="travel-note-title">秋旅を心地よく<br>楽しむために</h2>
+            </div>
+            <div class="travel-note-grid">
+                <article>
+                    <span>01</span>
+                    <h3>余裕のある計画を</h3>
+                    <p>移動時間や休憩を見込み、詰め込みすぎない旅程にすると景色をゆっくり楽しめます。</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>寒さへの備えを</h3>
+                    <p>秋の寒風に備え、暖かい服やマフラーを準備しましょう。</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>風景を大切に</h3>
+                    <p>地域のルールと自然環境に配慮し、訪れた場所の美しさを次の人へつなげましょう。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 【変更】前・次の季節に合わせてhrefと表示名を変更する。対応表はREADME.mdを参照する。 -->
+        <nav class="season-pager" aria-label="季節ページの移動">
+            <a href="summer.html"><span>PREVIOUS</span>夏のページへ</a>
+            <a href="index.html" class="season-pager-home"><span>HOME</span>四季のトップへ</a>
+            <a href="winter.html"><span>NEXT</span>冬のページへ</a>
+        </nav>
     </main>
+
+    <!-- 【固定】全ページ共通フッター。現在の季節だけaria-current="page"を付ける。 -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -97,8 +223,8 @@
             </div>
             <nav class="site-footer-nav" aria-label="フッターナビゲーション">
                 <a href="spring.html">春</a>
-                <a href="summer.html">夏</a>
-                <a href="autumn.html" aria-current="page">秋</a>
+                <a href="summer.html" aria-current="page">夏</a>
+                <a href="autumn.html">秋</a>
                 <a href="winter.html">冬</a>
             </nav>
             <p class="site-copyright"><small>&copy; 2026 日本の四季を味わう / 1班</small></p>
