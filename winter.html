@@ -16,7 +16,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link href="css/site-shell.css" rel="stylesheet">
     <!-- 【固定】季節ごとの配色はbodyのテーマクラスで切り替わるため、このCSSパスとCSS本体は変更しない。 -->
     <link href="css\season-page.css" rel="stylesheet">
@@ -27,6 +29,7 @@
     【変更】theme-summerを作成する季節に合わせて1つだけ指定する。
     春: theme-spring / 夏: theme-summer / 秋: theme-autumn / 冬: theme-winter
 -->
+
 <body class="season-detail-page theme-winter">
     <a class="skip-link" href="#main-content">本文へ移動</a>
 
@@ -38,7 +41,8 @@
                 <span class="site-brand-en">SEASONS OF JAPAN</span>
             </a>
 
-            <button class="site-menu-button" type="button" aria-label="メニューを開く" aria-controls="global-navigation" aria-expanded="false">
+            <button class="site-menu-button" type="button" aria-label="メニューを開く" aria-controls="global-navigation"
+                aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -75,7 +79,6 @@
 
         <!-- 【変更】紹介数、季節名、導入文を実際の内容と一致させる。 -->
         <section class="season-intro" id="destinations" aria-labelledby="destinations-title">
-            <div class="season-intro-number" aria-hidden="true">03</div>
             <div class="season-intro-heading">
                 <p class="section-kicker">PLACES TO VISIT</p>
                 <h2 id="destinations-title">冬に訪れたい、<br>3つの風景</h2>
@@ -96,7 +99,8 @@
                 <div class="destination-content">
                     <p class="destination-area">岐阜・白川郷</p>
                     <h2>しんしんと雪が降り積もる<br>合掌造りの集落</h2>
-                    <p class="destination-description">白銀の世界に佇む昔ながらの茅葺き屋根と、夜に灯る温かな明かり。静寂に包まれた伝統の山村を眺めながら、日本らしい情緒あふれる冬を感じられます。</p>
+                    <p class="destination-description">
+                        白銀の世界に佇む昔ながらの茅葺き屋根と、夜に灯る温かな明かり。静寂に包まれた伝統の山村を眺めながら、日本らしい情緒あふれる冬を感じられます。</p>
                     <ul class="destination-points" aria-label="白川郷の見どころ">
                         <li>一面の銀世界</li>
                         <li>集落の風景</li>
@@ -108,11 +112,14 @@
                             <div>
                                 <p>ACCESS MAP</p>
                                 <h3>白川郷</h3>
+                            </div>
+                            <!-- 【変更】q=以降とtitleを同じ施設名へ変更する。 -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
-                        <!-- 【変更】q=以降とtitleを同じ施設名へ変更する。 -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
-                </div>
             </article>
 
             <!--
@@ -127,7 +134,8 @@
                 <div class="destination-content">
                     <p class="destination-area">山形・蔵王</p>
                     <h2>山頂を埋め尽くす<br>スノーモンスター</h2>
-                    <p class="destination-description">青い冬空の先に、自然の芸術が作り出す巨大な樹氷の群れが広がります。圧倒的なスケールの景色を眺めるだけでも、日常から離れた神秘的な時間を過ごせます。</p>
+                    <p class="destination-description">
+                        青い冬空の先に、自然の芸術が作り出す巨大な樹氷の群れが広がります。圧倒的なスケールの景色を眺めるだけでも、日常から離れた神秘的な時間を過ごせます。</p>
                     <ul class="destination-points" aria-label="蔵王の見どころ">
                         <li>迫力のある樹氷</li>
                         <li>白い銀世界</li>
@@ -138,10 +146,13 @@
                             <div>
                                 <p>ACCESS MAP</p>
                                 <h3>蔵王の樹氷</h3>
+                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100402.61028500137!2d140.36263171556587!3d38.14992146628461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z6JS1546LIOaoueawtw!5e0!3m2!1sja!2sjp!4v1784465700854!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
-                </div>
             </article>
 
             <!-- 【変更：おすすめ場所3】場所1と同じ項目を変更する。 -->
@@ -153,7 +164,8 @@
                 <div class="destination-content">
                     <p class="destination-area">栃木・あしかがフラワーパーク</p>
                     <h2>冬の夜空を彩る<br>光の藤棚</h2>
-                    <p class="destination-description">深い闇に包まれた園内と、景色を鮮やかに染めるイルミネーション。きらめく光や夜空に浮かぶ花を感じながら、ゆっくりと流れる冬の時間を楽しめます。</p>
+                    <p class="destination-description">
+                        深い闇に包まれた園内と、景色を鮮やかに染めるイルミネーション。きらめく光や夜空に浮かぶ花を感じながら、ゆっくりと流れる冬の時間を楽しめます。</p>
                     <ul class="destination-points" aria-label="あしかがフラワーパークの見どころ">
                         <li>幻想的な光</li>
                         <li>藤棚の景観</li>
@@ -164,10 +176,13 @@
                             <div>
                                 <p>ACCESS MAP</p>
                                 <h3>あしかがフラワーパーク</h3>
+                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.923741566415!2d139.5174472758162!3d36.314156072389615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f24a910deedd3%3A0x631a0f5f26b9c043!2z44GC44GX44GL44GM44OV44Op44Ov44O844OR44O844Kv!5e0!3m2!1sja!2sjp!4v1784466155051!5m2!1sja!2sjp"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.923741566415!2d139.5174472758162!3d36.314156072389615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f24a910deedd3%3A0x631a0f5f26b9c043!2z44GC44GX44GL44GM44OV44Op44Ov44O844OR44O844Kv!5e0!3m2!1sja!2sjp!4v1784466155051!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
-                </div>
             </article>
         </div>
 
