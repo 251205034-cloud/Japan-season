@@ -1,22 +1,43 @@
-window.addEventListener('load', function () {
-    var $button = this.document.querySelector('.toggle-menu-button');
-    var $menu = this.document.querySelector('.header-site-menu');
+document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.querySelector('.site-menu-button');
 
-    $button.addEventListener('click', function () {
-        if ($menu.classList.contains('is-show')) {
-            $menu.classList.remove('is-show');
-        }
-        else {
-            $menu.classList.add('is-show');
+    if (!menuButton) {
+        return;
+    }
+
+    const navigationId = menuButton.getAttribute('aria-controls');
+    const navigation = navigationId ? document.getElementById(navigationId) : null;
+
+    if (!navigation) {
+        console.error('モバイルメニューを初期化できません: aria-controlsの参照先が見つかりません。');
+        return;
+    }
+
+    function setMenuState(isOpen) {
+        navigation.classList.toggle('is-show', isOpen);
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+    }
+
+    menuButton.addEventListener('click', function () {
+        setMenuState(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    navigation.addEventListener('click', function (event) {
+        if (event.target.closest('a')) {
+            setMenuState(false);
         }
     });
-});
 
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            setMenuState(false);
+        }
+    });
 
-$(function () {
-    $(window).scroll(function () {
-        $("nav.floating").stop().animate(
-            {"top": $(window).scrollTop() + 100},
-        500);
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 760) {
+            setMenuState(false);
+        }
     });
 });

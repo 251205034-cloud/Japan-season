@@ -1,84 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
-    <title>名城大学情報工学部のコンセプト</title>
-    <meta name="description" content="コンセプト">
-    <meta name="viewport" content="width=device-width">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/season.css" rel="stylesheet">
+    <meta name="description" content="富良野、宮古島、四万十川。日本の夏に訪れたい3つの風景を紹介します。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0d7185">
+    <title>夏のおすすめ旅 | 日本の四季を味わう</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/summer.css" rel="stylesheet">
+    <link href="css/site-shell.css" rel="stylesheet">
+    <script src="js/main.js?v=20260720" defer></script>
 </head>
 
-<body>
-    <header class="header">
-        <div class="header-inner">
-            <a class="header-logo" href="index.html">
-                <img src="images/common/logo.png" alt="ロゴ">
+<body class="summer-page">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="site-brand" href="index.html" aria-label="日本の四季 トップページ">
+                <span class="site-brand-ja">日本の四季</span>
+                <span class="site-brand-en">SEASONS OF JAPAN</span>
             </a>
-            <button class="toggle-menu-button"></button>
-            <div class="header-site-menu">
-                <nav class="site-menu">
+
+            <button class="site-menu-button" type="button" aria-label="メニューを開く" aria-controls="global-navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="site-navigation" id="global-navigation">
+                <nav class="site-navigation-menu" aria-label="季節別ページ">
                     <ul>
-                        <li><a href="spring.html">春</a></li>
-                        <li><a href="summer.html">夏</a></li>
-                        <li><a href="autumn.html">秋</a></li>
-                        <li><a href="winter.html">冬</a></li>
+                        <li><a href="spring.html"><span>01</span>春</a></li>
+                        <li><a href="summer.html" aria-current="page"><span>02</span>夏</a></li>
+                        <li><a href="autumn.html"><span>03</span>秋</a></li>
+                        <li><a href="winter.html"><span>04</span>冬</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-    <main class="main">
-        <div class="title">
-            <h1>Concept</h1>
-            <p>情報工学部について</p>
-        </div>
-        <div class="feature">
-            <div class="feature-text">
-                <h2>コースとプログラムの組み合わせによる多彩な学び</h2>
-                <p>一人ひとりの興味や適性，目指す将来に応じて，学びを組み立てることができます．</p>
+
+    <main id="main-content">
+        <section class="summer-hero" aria-labelledby="summer-title">
+            <img class="summer-hero-image" src="images/summer/宮古島.jpg.webp" alt="宮古島の青い海と白い砂浜">
+            <div class="summer-hero-content">
+                <p class="hero-kicker"><span>02</span> SUMMER JOURNEY</p>
+                <h1 id="summer-title">光と水をめぐる、<br><strong>日本の夏。</strong></h1>
+                <p class="hero-lead">風に揺れる花、どこまでも透き通る海、<br>山あいを静かに流れる清流。<br>夏だからこそ出会える3つの風景へ。</p>
+                <a class="hero-button" href="#destinations">おすすめの場所を見る<span aria-hidden="true">↓</span></a>
             </div>
-        </div>
-        <div class="feature reverse">
-            <div class="feature-text">
-                <h2>理工学部のモノづくりマインドが源流</h2>
-                <p>理工学部のDNAを受け継ぎ，教育の源流には「創造型実学」の精神があります．</p>
+            <p class="hero-location">MIYAKOJIMA <span>OKINAWA</span></p>
+        </section>
+
+        <section class="summer-intro" id="destinations" aria-labelledby="destinations-title">
+            <div class="summer-intro-number" aria-hidden="true">03</div>
+            <div class="summer-intro-heading">
+                <p class="section-kicker">PLACES TO VISIT</p>
+                <h2 id="destinations-title">夏に訪れたい、<br>3つの風景</h2>
             </div>
+            <p class="summer-intro-copy">北から南へ、日本の夏は表情豊かです。花の色、海の青、森と川の緑。気分に合わせて、心に残る夏景色を選んでください。</p>
+        </section>
+
+        <div class="destination-list">
+            <article class="destination" id="furano">
+                <div class="destination-media">
+                    <img src="images/summer/富良野.jpg.webp" alt="紫色のラベンダーが一面に広がる富良野の花畑" loading="lazy">
+                    <p class="image-caption"><span>01</span> FURANO, HOKKAIDO</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">北海道・富良野</p>
+                    <h2>色と香りに包まれる<br>ラベンダー畑</h2>
+                    <p class="destination-description">丘を埋め尽くすラベンダーと、幾重にも重なる花の帯。広い空の下で鮮やかな色彩を眺めながら、北海道らしい伸びやかな夏を感じられます。</p>
+                    <ul class="destination-points" aria-label="富良野の見どころ">
+                        <li>一面の花畑</li>
+                        <li>丘の風景</li>
+                        <li>爽やかな空気</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>ファーム富田</h3>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%E5%AF%8C%E7%94%B0" target="_blank" rel="noopener noreferrer">大きな地図で見る<span aria-hidden="true">↗</span></a>
+                        </div>
+                        <iframe src="https://www.google.com/maps?q=%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%E5%AF%8C%E7%94%B0&output=embed" title="ファーム富田の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <article class="destination destination--reverse" id="miyakojima">
+                <div class="destination-media">
+                    <img src="images/summer/宮古島.jpg.webp" alt="白い砂浜と青い海が続く宮古島の海岸" loading="lazy">
+                    <p class="image-caption"><span>02</span> MIYAKOJIMA, OKINAWA</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">沖縄県・宮古島</p>
+                    <h2>水平線まで続く<br>宮古ブルー</h2>
+                    <p class="destination-description">白い砂浜の先に、淡い水色から深い青へと移ろう海が広がります。空と海の境目を眺めるだけでも、日常から離れた穏やかな時間を過ごせます。</p>
+                    <ul class="destination-points" aria-label="宮古島の見どころ">
+                        <li>透明度の高い海</li>
+                        <li>白い砂浜</li>
+                        <li>開放的な空</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>与那覇前浜ビーチ</h3>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8E%E9%82%A3%E8%A6%87%E5%89%8D%E6%B5%9C%E3%83%93%E3%83%BC%E3%83%81" target="_blank" rel="noopener noreferrer">大きな地図で見る<span aria-hidden="true">↗</span></a>
+                        </div>
+                        <iframe src="https://www.google.com/maps?q=%E4%B8%8E%E9%82%A3%E8%A6%87%E5%89%8D%E6%B5%9C%E3%83%93%E3%83%BC%E3%83%81&output=embed" title="与那覇前浜ビーチの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <article class="destination" id="shimanto">
+                <div class="destination-media">
+                    <img src="images/summer/四万十川.jpg" alt="緑の山々の間を流れる四万十川と沈下橋" loading="lazy">
+                    <p class="image-caption"><span>03</span> SHIMANTO, KOCHI</p>
+                </div>
+                <div class="destination-content">
+                    <p class="destination-area">高知県・四万十川</p>
+                    <h2>山の緑を映す<br>静かな清流</h2>
+                    <p class="destination-description">深い緑に囲まれた川面と、景色に溶け込む沈下橋。水の音や木々を渡る風を感じながら、ゆっくりと流れる夏の時間を楽しめます。</p>
+                    <ul class="destination-points" aria-label="四万十川の見どころ">
+                        <li>穏やかな清流</li>
+                        <li>沈下橋の景観</li>
+                        <li>豊かな山の緑</li>
+                    </ul>
+                    <div class="map-card">
+                        <div class="map-card-heading">
+                            <div>
+                                <p>ACCESS MAP</p>
+                                <h3>佐田沈下橋</h3>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=%E4%BD%90%E7%94%B0%E6%B2%88%E4%B8%8B%E6%A9%8B" target="_blank" rel="noopener noreferrer">大きな地図で見る<span aria-hidden="true">↗</span></a>
+                        </div>
+                        <iframe src="https://www.google.com/maps?q=%E4%BD%90%E7%94%B0%E6%B2%88%E4%B8%8B%E6%A9%8B&output=embed" title="佐田沈下橋の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </article>
         </div>
-        <div class="feature">
-            <div class="feature-text">
-                <h2>実社会を想定したPBL (Project Based Learning) の導入</h2>
-                <p>社会の中の複雑な課題に対し，チームで数ヶ月かけて開発する経験を通じて体験的に学ぶスタイルを取り入れます．</p>
+
+        <section class="travel-note" aria-labelledby="travel-note-title">
+            <div class="travel-note-heading">
+                <p class="section-kicker">TRAVEL NOTE</p>
+                <h2 id="travel-note-title">夏旅を心地よく<br>楽しむために</h2>
             </div>
-        </div>
-        <div class="movie">
-            <h2>名城大学情報工学部のPR動画</h2>
-            <iframe src="https://www.youtube.com/embed/AxMAMQrBUtE?si=bGK7I08KzC8BYxpw" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p>情報工学部の紹介</p>
-        </div>
-    </main>
-    <footer class="footer">
-        <nav class="site-menu">
-            <ul>
-                <li><a href="spring.html">春</a></li>
-                <li><a href="summer.html">夏</a></li>
-                <li><a href="autumn.html">秋</a></li>
-                <li><a href="winter.html">冬</a></li>
-            </ul>
+            <div class="travel-note-grid">
+                <article>
+                    <span>01</span>
+                    <h3>余裕のある計画を</h3>
+                    <p>移動時間や休憩を見込み、詰め込みすぎない旅程にすると景色をゆっくり楽しめます。</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>暑さへの備えを</h3>
+                    <p>こまめな水分補給と休憩を心がけ、帽子や日よけも準備して出かけましょう。</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>風景を大切に</h3>
+                    <p>地域のルールと自然環境に配慮し、訪れた場所の美しさを次の人へつなげましょう。</p>
+                </article>
+            </div>
+        </section>
+
+        <nav class="season-pager" aria-label="季節ページの移動">
+            <a href="spring.html"><span>PREVIOUS</span>春のページへ</a>
+            <a href="index.html" class="season-pager-home"><span>HOME</span>四季のトップへ</a>
+            <a href="autumn.html"><span>NEXT</span>秋のページへ</a>
         </nav>
-        <a class="footer-logo" href="index.html">
-            <img src="images/common/logo_footer.png" alt="ロゴ">
-        </a>
-        <p class="copyright"><small>&copy;名城大学情報工学部(嘘)</small></p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <p class="site-footer-title">日本の四季</p>
+                <p class="site-footer-subtitle">SEASONS OF JAPAN</p>
+            </div>
+            <nav class="site-footer-nav" aria-label="フッターナビゲーション">
+                <a href="spring.html">春</a>
+                <a href="summer.html" aria-current="page">夏</a>
+                <a href="autumn.html">秋</a>
+                <a href="winter.html">冬</a>
+            </nav>
+            <p class="site-copyright"><small>&copy; 2026 日本の四季を味わう / 1班</small></p>
+        </div>
     </footer>
 </body>
 
